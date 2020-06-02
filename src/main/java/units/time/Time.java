@@ -1,7 +1,5 @@
 package units.time;
 
-import units.angle.Angle;
-import units.angle.AngleUnit;
 import units.exceptions.NotMatchingUnitsException;
 import units.generic.Unit;
 
