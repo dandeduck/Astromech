@@ -1,4 +1,5 @@
 plugins {
+    id 'maven-publish'
     id 'java'
 }
 
@@ -10,5 +11,27 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+    compile "com.flash3388.flashlib:flashlib:2.1.0"
+    compile "com.flash3388.util:jmath:1.0"
+}
+test {
+    useJUnitPlatform()
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveBaseName.set(project.name)
+    archiveClassifier.set('sources')
+
+    from sourceSets.main.allSource
+}
+
+publishing {
+    publications {
+        mavenTracer(MavenPublication) {
+            from components.java
+            artifact sourcesJar
+//            artifact javadocJar
+        }
+    }
 }
