@@ -12,6 +12,10 @@ public class Time implements Unit {
         this.unit = unit;
     }
 
+    public static Time fromFlashTime(com.flash3388.flashlib.time.Time time) {
+        return nanoSeconds(time.toUnit(java.util.concurrent.TimeUnit.NANOSECONDS).value());
+    }
+
     public static Time nanoSeconds(double value) {
         return new Time(value, TimeUnit.NANOSECONDS);
     }

@@ -1,6 +1,5 @@
 package units.complex;
 
-import units.angle.Angle;
 import units.distance.Distance;
 
 public class Coordinates {
