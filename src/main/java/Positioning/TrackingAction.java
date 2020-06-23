@@ -59,15 +59,21 @@ public class TrackingAction extends Action {
     }
 
     private MotionState xState(MotionState sumState, Angle angle) {
-        return null;
+        double scalar = Math.cos(angle.valueAsRadians());
+        return new MotionState(sumState.velocity().mul(scalar), sumState.acceleration().mul(scalar), sumState.jerk().mul(scalar));
     }
 
     private MotionState yState(MotionState sumState, Angle angle) {
-        return null;
+        double scalar = Math.sin(angle.valueAsRadians());
+        return new MotionState(sumState.velocity().mul(scalar), sumState.acceleration().mul(scalar), sumState.jerk().mul(scalar));
     }
 
     private Distance changeInCoordinate(MotionState state) {
-        return null;
+        double deltaTimeInSeconds = deltaTimeSeconds();
+        double velocityComponent = state.velocity().valueAsMetersPerSecond() * deltaTimeInSeconds;
+        double accelerationComponent = 0.5 * state.acceleration().valueAsMetersPerSecondSquared() * deltaTimeInSeconds * deltaTimeInSeconds;
+        double jerkComponent = 1/6.0 * state.jerk().valueAsMetersPerSecondCubed() * deltaTimeInSeconds * deltaTimeInSeconds * deltaTimeInSeconds;
+        return Distance.meters(velocityComponent + accelerationComponent + jerkComponent);
     }
 
     private double deltaTimeSeconds() {
