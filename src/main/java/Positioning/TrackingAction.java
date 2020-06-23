@@ -18,6 +18,10 @@ public class TrackingAction extends Action {
     private Time lastTime;
     private Coordinates currentCoordinates;
 
+    public TrackingAction(Clock clock, Trackable trackable) {
+        this(new Coordinates(), clock, trackable::motionState, trackable::angle);
+    }
+
     public TrackingAction(Clock clock, Supplier<MotionState> stateSupplier, Supplier<Angle> angleSupplier) {
         this(new Coordinates(), clock, stateSupplier, angleSupplier);
     }
