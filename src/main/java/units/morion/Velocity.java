@@ -2,11 +2,11 @@ package units.morion;
 
 import units.distance.DistanceUnit;
 import units.exceptions.NotMatchingUnitsException;
-import units.generic.Unit;
+import units.generic.Value;
 import units.time.Time;
 import units.time.TimeUnit;
 
-public class Velocity implements Unit {
+public class Velocity implements Value {
     private final double value;
     private final DistanceUnit distanceUnit;
     private final TimeUnit timeUnit;
@@ -58,7 +58,7 @@ public class Velocity implements Unit {
         return timeUnit;
     }
 
-    public Velocity add(Unit other) {
+    public Velocity add(Value other) {
         if (other instanceof Velocity)
             return add((Velocity) other);
         else
@@ -70,7 +70,7 @@ public class Velocity implements Unit {
         return new Velocity(value + other.value(), distanceUnit, timeUnit);
     }
 
-    public Velocity sub(Unit other) {
+    public Velocity sub(Value other) {
         if (other instanceof Velocity)
             return sub((Velocity) other);
         else

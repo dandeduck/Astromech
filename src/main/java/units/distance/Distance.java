@@ -1,11 +1,11 @@
 package units.distance;
 
 import units.exceptions.NotMatchingUnitsException;
-import units.generic.Unit;
+import units.generic.Value;
 import units.morion.Velocity;
 import units.time.Time;
 
-public class Distance implements Unit {
+public class Distance implements Value {
     private final double value;
     private final DistanceUnit unit;
 
@@ -59,7 +59,7 @@ public class Distance implements Unit {
         return unit;
     }
 
-    public Distance add(Unit other) {
+    public Distance add(Value other) {
         if (other instanceof Distance)
             return add((Distance)other);
         else
@@ -72,7 +72,7 @@ public class Distance implements Unit {
         return new Distance(value + other.value(), unit);
     }
 
-    public Distance sub(Unit other) {
+    public Distance sub(Value other) {
         if (other instanceof Distance)
             return sub((Distance)other);
         else

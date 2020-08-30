@@ -1,9 +1,9 @@
 package units.time;
 
 import units.exceptions.NotMatchingUnitsException;
-import units.generic.Unit;
+import units.generic.Value;
 
-public class Time implements Unit {
+public class Time implements Value {
     private final double value;
     private final TimeUnit unit;
 
@@ -42,7 +42,7 @@ public class Time implements Unit {
     }
 
     @Override
-    public Time add(Unit other) {
+    public Time add(Value other) {
         if (other instanceof Time)
             return add((Time)other);
         else
@@ -50,7 +50,7 @@ public class Time implements Unit {
     }
 
     @Override
-    public Time sub(Unit other) {
+    public Time sub(Value other) {
         if (other instanceof Time)
             return sub((Time)other);
         else

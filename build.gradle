@@ -3,7 +3,7 @@ plugins {
     id 'java'
 }
 
-group 'github.loudyduck'
+group 'github.dandeduck'
 version '1.0.0-alpha.1'
 
 repositories {
@@ -19,19 +19,10 @@ test {
     useJUnitPlatform()
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    archiveBaseName.set(project.name)
-    archiveClassifier.set('sources')
-
-    from sourceSets.main.allSource
-}
-
 publishing {
     publications {
-        mavenTracer(MavenPublication) {
+        mavenAstromech(MavenPublication) {
             from components.java
-            artifact sourcesJar
-//            artifact javadocJar
         }
     }
 }

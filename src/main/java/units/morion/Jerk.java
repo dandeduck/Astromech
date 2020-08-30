@@ -2,10 +2,10 @@ package units.morion;
 
 import units.distance.DistanceUnit;
 import units.exceptions.NotMatchingUnitsException;
-import units.generic.Unit;
+import units.generic.Value;
 import units.time.TimeUnit;
 
-public class Jerk implements Unit {
+public class Jerk implements Value {
     private final double value;
     private final DistanceUnit distanceUnit;
     private final TimeUnit firstTimeUnit;
@@ -70,7 +70,7 @@ public class Jerk implements Unit {
     }
 
     @Override
-    public Jerk add(Unit other) {
+    public Jerk add(Value other) {
         if (other instanceof Jerk)
             return add((Jerk) other);
         else
@@ -83,7 +83,7 @@ public class Jerk implements Unit {
     }
 
     @Override
-    public Unit sub(Unit other) {
+    public Value sub(Value other) {
         if (other instanceof Jerk)
             return sub((Jerk) other);
         else

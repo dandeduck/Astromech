@@ -1,9 +1,9 @@
 package units.angle;
 
 import units.exceptions.NotMatchingUnitsException;
-import units.generic.Unit;
+import units.generic.Value;
 
-public class Angle implements Unit {
+public class Angle implements Value {
     private final double value;
     private final AngleUnit unit;
 
@@ -26,7 +26,7 @@ public class Angle implements Unit {
     }
 
     @Override
-    public Angle add(Unit other) {
+    public Angle add(Value other) {
         if (other instanceof Angle)
             return add((Angle)other);
         else
@@ -34,7 +34,7 @@ public class Angle implements Unit {
     }
 
     @Override
-    public Unit sub(Unit other) {
+    public Value sub(Value other) {
         if (other instanceof Angle)
             return sub((Angle)other);
         else
