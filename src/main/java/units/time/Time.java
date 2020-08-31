@@ -65,7 +65,7 @@ public class Time implements Value {
         other = other.toUnit(unit);
         return new Time(value + other.value(), unit);
     }
-    
+
     public Time sub(Time other) {
         other = other.toUnit(unit);
         return new Time(value - other.value(), unit);
