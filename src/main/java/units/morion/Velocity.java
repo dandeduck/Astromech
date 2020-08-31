@@ -46,18 +46,7 @@ public class Velocity implements Value {
         return value;
     }
 
-    public double valueAsMetersPerSecond() {
-        return toUnit(DistanceUnit.METERS, TimeUnit.SECONDS).value();
-    }
-
-    public DistanceUnit distanceUnit() {
-        return distanceUnit;
-    }
-
-    public TimeUnit timeUnit() {
-        return timeUnit;
-    }
-
+    @Override
     public Velocity add(Value other) {
         if (other instanceof Velocity)
             return add((Velocity) other);
@@ -65,16 +54,17 @@ public class Velocity implements Value {
             throw new NotMatchingUnitsException();
     }
 
-    public Velocity add(Velocity other) {
-        other = other.toUnit(this);
-        return new Velocity(value + other.value(), distanceUnit, timeUnit);
-    }
-
+    @Override
     public Velocity sub(Value other) {
         if (other instanceof Velocity)
             return sub((Velocity) other);
         else
             throw new NotMatchingUnitsException();
+    }
+
+    public Velocity add(Velocity other) {
+        other = other.toUnit(this);
+        return new Velocity(value + other.value(), distanceUnit, timeUnit);
     }
 
     public Velocity sub(Velocity other) {
@@ -85,6 +75,18 @@ public class Velocity implements Value {
     public double div(Velocity other) {
         other = other.toUnit(this);
         return value()/other.value();
+    }
+
+    public double valueAsMetersPerSecond() {
+        return toUnit(DistanceUnit.METERS, TimeUnit.SECONDS).value();
+    }
+
+    public DistanceUnit distanceUnit() {
+        return distanceUnit;
+    }
+
+    public TimeUnit timeUnit() {
+        return timeUnit;
     }
 
     public Time div(Acceleration acceleration) {

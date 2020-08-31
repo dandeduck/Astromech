@@ -61,6 +61,16 @@ public class Time implements Value {
         return unit;
     }
 
+    public Time add(Time other) {
+        other = other.toUnit(unit);
+        return new Time(value + other.value(), unit);
+    }
+    
+    public Time sub(Time other) {
+        other = other.toUnit(unit);
+        return new Time(value - other.value(), unit);
+    }
+
     public double valueAsSeconds() {
         return unit.toUnit(TimeUnit.SECONDS, value);
     }
@@ -69,14 +79,6 @@ public class Time implements Value {
         return unit.toUnit(TimeUnit.MILLISECONDS, value);
     }
 
-    public Time add(Time other) {
-        other = other.toUnit(unit);
-        return new Time(value + other.value(), unit);
-    }
-    public Time sub(Time other) {
-        other = other.toUnit(unit);
-        return new Time(value - other.value(), unit);
-    }
     public double div(Time other) {
         other = other.toUnit(unit);
         return value / other.value();

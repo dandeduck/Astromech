@@ -48,21 +48,12 @@ public class Acceleration implements Value {
         return value;
     }
 
-    public double valueAsMetersPerSecondSquared() {
-        return toUnit(DistanceUnit.METERS, TimeUnit.SECONDS, TimeUnit.SECONDS).value();
-    }
-
     @Override
     public Acceleration add(Value other) {
         if (other instanceof Acceleration)
             return add((Acceleration) other);
         else
             throw new NotMatchingUnitsException();
-    }
-
-    public Acceleration add(Acceleration other) {
-        other = other.toUnit(this);
-        return new Acceleration(value + other.value(), distanceUnit, firstTimeUnit, secondTimeUnit);
     }
 
     @Override
@@ -73,9 +64,18 @@ public class Acceleration implements Value {
             throw new NotMatchingUnitsException();
     }
 
+    public Acceleration add(Acceleration other) {
+        other = other.toUnit(this);
+        return new Acceleration(value + other.value(), distanceUnit, firstTimeUnit, secondTimeUnit);
+    }
+
     public Acceleration sub(Acceleration other) {
         other = other.toUnit(this);
         return new Acceleration(value - other.value(), distanceUnit, firstTimeUnit, secondTimeUnit);
+    }
+
+    public double valueAsMetersPerSecondSquared() {
+        return toUnit(DistanceUnit.METERS, TimeUnit.SECONDS, TimeUnit.SECONDS).value();
     }
 
     public double div(Acceleration other) {

@@ -49,21 +49,12 @@ public class Jerk implements Value {
         return value;
     }
 
-    public double valueAsMetersPerSecondCubed() {
-        return toUnit(DistanceUnit.METERS, TimeUnit.SECONDS, TimeUnit.SECONDS, TimeUnit.SECONDS).value();
-    }
-
     @Override
     public Jerk add(Value other) {
         if (other instanceof Jerk)
             return add((Jerk) other);
         else
             throw new NotMatchingUnitsException();
-    }
-
-    public Jerk add(Jerk other) {
-        other = other.toUnit(this);
-        return new Jerk(value + other.value, distanceUnit, firstTimeUnit, secondTimeUnit, thirdTimeUnit);
     }
 
     @Override
@@ -74,9 +65,18 @@ public class Jerk implements Value {
             throw new NotMatchingUnitsException();
     }
 
+    public Jerk add(Jerk other) {
+        other = other.toUnit(this);
+        return new Jerk(value + other.value, distanceUnit, firstTimeUnit, secondTimeUnit, thirdTimeUnit);
+    }
+
     public Jerk sub(Jerk other) {
         other = other.toUnit(this);
         return new Jerk(value - other.value, distanceUnit, firstTimeUnit, secondTimeUnit, thirdTimeUnit);
+    }
+
+    public double valueAsMetersPerSecondCubed() {
+        return toUnit(DistanceUnit.METERS, TimeUnit.SECONDS, TimeUnit.SECONDS, TimeUnit.SECONDS).value();
     }
 
     public double div(Jerk other) {

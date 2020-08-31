@@ -51,17 +51,18 @@ public class Distance implements Value {
         return value;
     }
 
-    public double valueAsMeters() {
-        return unit.toUnit(DistanceUnit.METERS, value);
-    }
-
-    public DistanceUnit unit() {
-        return unit;
-    }
-
+    @Override
     public Distance add(Value other) {
         if (other instanceof Distance)
             return add((Distance)other);
+        else
+            throw new NotMatchingUnitsException();
+    }
+
+    @Override
+    public Distance sub(Value other) {
+        if (other instanceof Distance)
+            return sub((Distance)other);
         else
             throw new NotMatchingUnitsException();
     }
@@ -72,17 +73,18 @@ public class Distance implements Value {
         return new Distance(value + other.value(), unit);
     }
 
-    public Distance sub(Value other) {
-        if (other instanceof Distance)
-            return sub((Distance)other);
-        else
-            throw new NotMatchingUnitsException();
-    }
-
     public Distance sub(Distance other) {
         other = other.toUnit(unit);
 
         return new Distance(value - other.value(), unit);
+    }
+
+    public double valueAsMeters() {
+        return unit.toUnit(DistanceUnit.METERS, value);
+    }
+
+    public DistanceUnit unit() {
+        return unit;
     }
 
     public double div(Distance denominator) {
