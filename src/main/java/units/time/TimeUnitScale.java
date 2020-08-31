@@ -1,6 +1,6 @@
 package units.time;
 
-import static units.generic.GenericUnitScale.MILLI_SCALE;
+import static units.generic.GenericUnitScale.KILO_SCALE;
 
 public class TimeUnitScale {
     public static final int SECONDS_IN_A_MINUTE = 60;
@@ -12,7 +12,7 @@ public class TimeUnitScale {
     public static final double HOURS_TO_SECONDS_SCALE = MINUTES_TO_SECONDS_SCALE * MINUTES_IN_AN_HOUR;
     public static final double DAYS_TO_SECONDS_SCALE = HOURS_TO_SECONDS_SCALE * HOURS_IN_A_DAY;
     public static final double WEEKS_TO_SECONDS_SCALE = DAYS_TO_SECONDS_SCALE * DAYS_IN_A_WEEK;
-    public static final double MILLISECONDS_TO_SECONDS_SCALE = 1.0 / MILLI_SCALE;
-    public static final double MICROSECONDS_TO_SECONDS_SCALE = MILLISECONDS_TO_SECONDS_SCALE / MILLI_SCALE;
-    public static final double NANOSECONDS_TO_SECONDS_SCALE = MICROSECONDS_TO_SECONDS_SCALE / MILLI_SCALE;
+    public static final double MILLISECONDS_TO_SECONDS_SCALE = 1.0 / KILO_SCALE;
+    public static final double MICROSECONDS_TO_SECONDS_SCALE = MILLISECONDS_TO_SECONDS_SCALE / KILO_SCALE;
+    public static final double NANOSECONDS_TO_SECONDS_SCALE = MICROSECONDS_TO_SECONDS_SCALE / KILO_SCALE;
 }

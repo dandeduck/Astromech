@@ -52,18 +52,6 @@ public class Acceleration implements Value {
         return toUnit(DistanceUnit.METERS, TimeUnit.SECONDS, TimeUnit.SECONDS).value();
     }
 
-    public DistanceUnit distanceUnit() {
-        return distanceUnit;
-    }
-
-    public TimeUnit firstTimeUnit() {
-        return firstTimeUnit;
-    }
-
-    public TimeUnit secondTimeUnit() {
-        return secondTimeUnit;
-    }
-
     @Override
     public Acceleration add(Value other) {
         if (other instanceof Acceleration)
@@ -112,7 +100,7 @@ public class Acceleration implements Value {
     }
 
     public Acceleration toUnit(Acceleration other) {
-        return toUnit(other.distanceUnit(), other.firstTimeUnit(), other.secondTimeUnit());
+        return toUnit(other.distanceUnit, other.firstTimeUnit, other.secondTimeUnit);
     }
 
     public Acceleration toUnit(DistanceUnit newDistanceUnit, TimeUnit newFirstTimeUnit, TimeUnit newSecondTimeUnit) {

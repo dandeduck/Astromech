@@ -53,22 +53,6 @@ public class Jerk implements Value {
         return toUnit(DistanceUnit.METERS, TimeUnit.SECONDS, TimeUnit.SECONDS, TimeUnit.SECONDS).value();
     }
 
-    public DistanceUnit distanceUnit() {
-        return distanceUnit;
-    }
-
-    public TimeUnit firstTimeUnit() {
-        return firstTimeUnit;
-    }
-
-    public TimeUnit secondTimeUnit() {
-        return secondTimeUnit;
-    }
-
-    public TimeUnit thirdTimeUnit() {
-        return thirdTimeUnit;
-    }
-
     @Override
     public Jerk add(Value other) {
         if (other instanceof Jerk)
@@ -109,7 +93,7 @@ public class Jerk implements Value {
     }
 
     public Jerk toUnit(Jerk other) {
-        return toUnit(other.distanceUnit(), other.firstTimeUnit(), other.secondTimeUnit(), other.thirdTimeUnit());
+        return toUnit(other.distanceUnit, other.firstTimeUnit, other.secondTimeUnit, other.thirdTimeUnit);
     }
 
     public Jerk toUnit(DistanceUnit newDistanceUnit, TimeUnit newFirstTimeUnit, TimeUnit newSecondTimeUnit, TimeUnit newThirdTimeUnit) {

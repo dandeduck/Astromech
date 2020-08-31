@@ -1,5 +1,7 @@
 package units.distance;
 
+import units.generic.GenericUnitScale;
+
 public enum DistanceUnit {
     NANOMETERS(DistanceUnitScale.NANOMETERS_TO_METERS_SCALE),
     MICROMETERS(DistanceUnitScale.MICROMETERS_TO_METERS_SCALE),
@@ -9,7 +11,7 @@ public enum DistanceUnit {
     FEET(DistanceUnitScale.FEET_TO_METERS_SCALE),
     YARDS(DistanceUnitScale.YARDS_TO_METERS_SCALE),
     METERS(1),
-    KILOMETERS(DistanceUnitScale.KILOMETERS_TO_METERS_SCALE),
+    KILOMETERS(GenericUnitScale.KILO_SCALE),
     MILES(DistanceUnitScale.MILES_TO_METERS_SCALE);
 
     private final double toMetersScale;
