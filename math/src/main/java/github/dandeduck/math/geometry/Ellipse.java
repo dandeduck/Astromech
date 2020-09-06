@@ -4,6 +4,10 @@ public interface Ellipse {
     double semiMajorAxis();
     double semiMinorAxis();
 
+    default double area() {
+        return Math.PI * semiMajorAxis() * semiMinorAxis();
+    }
+
     default double h() {
         double a = semiMajorAxis();
         double b = semiMinorAxis();
