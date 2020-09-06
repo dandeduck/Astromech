@@ -1,28 +1,31 @@
-plugins {
-    id 'maven-publish'
-    id 'java'
-}
-
-version = VERSION_NAME
-group = GROUP
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
-    compile "com.flash3388.flashlib:flashlib:2.1.0"
-    compile "com.flash3388.util:jmath:1.0"
-}
-test {
-    useJUnitPlatform()
-}
-
-publishing {
-    publications {
-        mavenAstromech(MavenPublication) {
-            from components.java
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
         }
+    }
+}
+
+allprojects {
+    version = VERSION_NAME
+    group = GROUP
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    dependencies {
+        testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
+        compile "com.flash3388.flashlib:flashlib:2.1.0"
+        compile "com.flash3388.util:jmath:1.0"
+    }
+
+    test {
+        useJUnitPlatform()
     }
 }
