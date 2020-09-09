@@ -1,10 +1,8 @@
-package github.dandeduck.units.morion;
+package github.dandeduck.units.values;
 
-import github.dandeduck.units.distance.DistanceUnit;
+import github.dandeduck.units.units.DistanceUnit;
 import github.dandeduck.units.NotMatchingUnitsException;
-import github.dandeduck.units.Value;
-import github.dandeduck.units.time.Time;
-import github.dandeduck.units.time.TimeUnit;
+import github.dandeduck.units.units.TimeUnit;
 
 public class Velocity implements Value {
     private final double value;

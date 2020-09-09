@@ -1,7 +1,7 @@
-package github.dandeduck.units.distance;
+package github.dandeduck.units.units;
 
-import static github.dandeduck.units.GenericUnitScale.HECTO_SCALE;
-import static github.dandeduck.units.GenericUnitScale.KILO_SCALE;
+import static github.dandeduck.units.units.GenericUnitScale.HECTO_SCALE;
+import static github.dandeduck.units.units.GenericUnitScale.KILO_SCALE;
 
 public class DistanceUnitScale {
     public static final int FEET_IN_A_YARD = 3;

@@ -1,6 +1,4 @@
-package github.dandeduck.units.angle;
-
-import github.dandeduck.units.Unit;
+package github.dandeduck.units.units;
 
 public enum AngleUnit implements Unit {
     DEGREES(1),

@@ -1,6 +1,6 @@
-package github.dandeduck.units.mass;
+package github.dandeduck.units.units;
 
-import static github.dandeduck.units.GenericUnitScale.KILO_SCALE;
+import static github.dandeduck.units.units.GenericUnitScale.KILO_SCALE;
 
 public class MassUnitScale {
     public static final double MILLIGRAM_TO_KILOGRAM_SCALE = 1.0 / (KILO_SCALE * KILO_SCALE);

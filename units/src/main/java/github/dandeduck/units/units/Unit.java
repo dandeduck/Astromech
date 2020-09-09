@@ -1,9 +1,9 @@
-package github.dandeduck.units;
+package github.dandeduck.units.units;
 
 public interface Unit {
     double toBaseUnitScale();
 
-    default double toUnit(Unit unit, double val) {
+    default double toUnit(double val, Unit unit) {
         return val * conversionValue(unit);
     }
 

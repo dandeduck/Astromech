@@ -1,7 +1,4 @@
-package github.dandeduck.units.distance;
-
-import github.dandeduck.units.Unit;
-import github.dandeduck.units.GenericUnitScale;
+package github.dandeduck.units.units;
 
 public enum DistanceUnit implements Unit {
     NANOMETERS(DistanceUnitScale.NANOMETERS_TO_METERS_SCALE),

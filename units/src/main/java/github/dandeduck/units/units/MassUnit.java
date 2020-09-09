@@ -1,7 +1,4 @@
-package github.dandeduck.units.mass;
-
-import github.dandeduck.units.GenericUnitScale;
-import github.dandeduck.units.Unit;
+package github.dandeduck.units.units;
 
 public enum MassUnit implements Unit {
     MILLIGRAMS(MassUnitScale.MILLIGRAM_TO_KILOGRAM_SCALE),

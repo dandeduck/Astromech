@@ -1,6 +1,4 @@
-package github.dandeduck.units.time;
-
-import github.dandeduck.units.Unit;
+package github.dandeduck.units.units;
 
 public enum TimeUnit implements Unit {
     NANOSECONDS(TimeUnitScale.NANOSECONDS_TO_SECONDS_SCALE),
