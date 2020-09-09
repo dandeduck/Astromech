@@ -1,6 +1,7 @@
 package github.dandeduck.units.values;
 
 import github.dandeduck.units.units.complex.AccelerationUnit;
+import github.dandeduck.units.units.complex.JerkUnit;
 
 public class Acceleration extends ValueBase<AccelerationUnit> {
     public Acceleration(double value, AccelerationUnit unit) {
@@ -49,6 +50,10 @@ public class Acceleration extends ValueBase<AccelerationUnit> {
 
     public Velocity mul(Time passedTime) {
         return new Velocity(toUnit(new AccelerationUnit(unit().velocityUnit(), passedTime.unit())).value() * passedTime.value(), unit().velocityUnit());
+    }
+
+    public Jerk div(Time passedTime) {
+        return new Jerk(value() * passedTime.value(), new JerkUnit(unit(), passedTime.unit()));
     }
 
     public double valueAsMetersPerSecondSquared() {

@@ -7,6 +7,10 @@ public class Time extends ValueBase<TimeUnit> {
         super(value, unit);
     }
 
+    public static Time fromFlashTime(com.flash3388.flashlib.time.Time time) {
+        return milliseconds(time.valueAsMillis());
+    }
+
     public static Time hours(double value) {
         return new Time(value, TimeUnit.HOURS);
     }
