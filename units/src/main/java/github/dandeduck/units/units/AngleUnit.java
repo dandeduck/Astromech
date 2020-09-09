@@ -1,5 +1,7 @@
 package github.dandeduck.units.units;
 
+import github.dandeduck.units.units.scales.AngleUnitScale;
+
 public enum AngleUnit implements Unit {
     DEGREES(1),
     RADIANS(AngleUnitScale.RADIAN_TO_DEGREE_SCALE);

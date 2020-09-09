@@ -22,13 +22,13 @@ public class ValueBase<U extends Unit> implements Value<U> {
     }
 
     @Override
-    public Value<U> add(Value<U> other) {
+    public ValueBase<U> add(Value<U> other) {
         other = new ValueBase<>(other.unit().toUnit(other.value(), unit), unit);
         return new ValueBase<>(value + other.value(), unit);
     }
 
     @Override
-    public Value<U> sub(Value<U> other) {
+    public ValueBase<U> sub(Value<U> other) {
         other = new ValueBase<>(other.unit().toUnit(other.value(), unit), unit);
         return new ValueBase<>(value - other.value(), unit);
     }

@@ -1,6 +1,6 @@
-package github.dandeduck.units.units;
+package github.dandeduck.units.units.scales;
 
-import static github.dandeduck.units.units.GenericUnitScale.KILO_SCALE;
+import static github.dandeduck.units.units.scales.GenericUnitScale.KILO_SCALE;
 
 public class TimeUnitScale {
     public static final int SECONDS_IN_A_MINUTE = 60;

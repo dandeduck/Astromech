@@ -1,5 +1,7 @@
 package github.dandeduck.units.units;
 
+import github.dandeduck.units.units.scales.TimeUnitScale;
+
 public enum TimeUnit implements Unit {
     NANOSECONDS(TimeUnitScale.NANOSECONDS_TO_SECONDS_SCALE),
     MICROSECONDS(TimeUnitScale.MICROSECONDS_TO_SECONDS_SCALE),
