@@ -1,7 +1,6 @@
 package github.dandeduck.Positioning;
 
 import github.dandeduck.units.complex.MotionState;
-import github.dandeduck.units.values.Velocity;
 
 public abstract class BasicTrackable implements Trackable{
     @Override

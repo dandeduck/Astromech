@@ -23,17 +23,29 @@ public class ValueBase<U extends Unit> implements Value<U> {
 
     @Override
     public ValueBase<U> add(Value<U> other) {
-        other = new ValueBase<>(other.unit().toUnit(other.value(), unit), unit);
+        other = transform(other);
         return new ValueBase<>(value + other.value(), unit);
     }
 
     @Override
     public ValueBase<U> sub(Value<U> other) {
-        other = new ValueBase<>(other.unit().toUnit(other.value(), unit), unit);
+        other = transform(other);
         return new ValueBase<>(value - other.value(), unit);
+    }
+
+    public ValueBase<U> mul(double factor) {
+        return new ValueBase<>(value * factor, unit);
+    }
+
+    public ValueBase<U> div(double factor) {
+        return new ValueBase<>(value / factor, unit);
     }
 
     public ValueBase<U> toUnit(U newUnit) {
         return new ValueBase<>(unit.toUnit(value, newUnit), newUnit);
+    }
+
+    private ValueBase<U> transform(Value<U> other) {
+        return new ValueBase<>(other.unit().toUnit(other.value(), unit), unit);
     }
 }
