@@ -1,5 +1,8 @@
 package github.dandeduck.units.complex;
 
+import github.dandeduck.units.values.Distance;
+import github.dandeduck.units.values.Time;
+
 public class Position {
     private final Time timestamp;
     private final Distance distance;

@@ -1,5 +1,7 @@
 package github.dandeduck.units.complex;
 
+import github.dandeduck.units.values.Velocity;
+
 import java.util.Objects;
 
 public class MotionState {
