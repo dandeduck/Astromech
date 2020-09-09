@@ -1,1 +1,3 @@
-rootProject.name = 'astromech'
+include 'math'
+include 'units'
+include 'positioning'
