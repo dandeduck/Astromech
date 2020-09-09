@@ -1,6 +1,8 @@
 package github.dandeduck.units.angle;
 
-public enum AngleUnit {
+import github.dandeduck.units.Unit;
+
+public enum AngleUnit implements Unit {
     DEGREES(1),
     RADIANS(AngleUnitScale.RADIAN_TO_DEGREE_SCALE);
 
@@ -10,11 +12,8 @@ public enum AngleUnit {
         this.toDegreesScale = toDegreesScale;
     }
 
-    public double toUnit(AngleUnit unit, double val) {
-        return val * conversionValue(unit);
-    }
-
-    private double conversionValue(AngleUnit unit) {
-        return toDegreesScale/unit.toDegreesScale;
+    @Override
+    public double toBaseUnitScale() {
+        return toDegreesScale;
     }
 }
