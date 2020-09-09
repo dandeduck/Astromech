@@ -1,6 +1,7 @@
 package github.dandeduck.units.values;
 
 import github.dandeduck.units.units.DistanceUnit;
+import github.dandeduck.units.units.complex.VelocityUnit;
 
 public class Distance extends ValueBase<DistanceUnit> {
     public Distance(double value, DistanceUnit unit) {
@@ -57,6 +58,10 @@ public class Distance extends ValueBase<DistanceUnit> {
     public Distance div(double factor) {
         ValueBase<DistanceUnit> result = super.div(factor);
         return new Distance(result.value(), result.unit());
+    }
+
+    public Velocity div(Time passedTime) {
+        return new Velocity(value() * passedTime.value(), new VelocityUnit(unit(), passedTime.unit()));
     }
 
     public double valueAsMeters() {
