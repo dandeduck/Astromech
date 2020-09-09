@@ -1,7 +1,7 @@
 package github.dandeduck.units.angle;
 
 import github.dandeduck.units.NotMatchingUnitsException;
-import github.dandeduck.units.generic.Value;
+import github.dandeduck.units.Value;
 
 public class Angle implements Value {
     private final double value;

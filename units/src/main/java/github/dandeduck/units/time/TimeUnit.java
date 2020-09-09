@@ -1,6 +1,8 @@
 package github.dandeduck.units.time;
 
-public enum TimeUnit {
+import github.dandeduck.units.Unit;
+
+public enum TimeUnit implements Unit {
     NANOSECONDS(TimeUnitScale.NANOSECONDS_TO_SECONDS_SCALE),
     MICROSECONDS(TimeUnitScale.MICROSECONDS_TO_SECONDS_SCALE),
     MILLISECONDS(TimeUnitScale.MILLISECONDS_TO_SECONDS_SCALE),
@@ -16,11 +18,8 @@ public enum TimeUnit {
         this.toSecondsScale = toSecondsScale;
     }
 
-    public double toUnit(TimeUnit unit, double val) {
-        return val * conversionValue(unit);
-    }
-
-    private double conversionValue(TimeUnit unit) {
-        return toSecondsScale/unit.toSecondsScale;
+    @Override
+    public double toBaseUnitScale() {
+        return toSecondsScale;
     }
 }

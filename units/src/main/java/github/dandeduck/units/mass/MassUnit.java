@@ -1,8 +1,9 @@
 package github.dandeduck.units.mass;
 
-import github.dandeduck.units.generic.GenericUnitScale;
+import github.dandeduck.units.GenericUnitScale;
+import github.dandeduck.units.Unit;
 
-public enum MassUnit {
+public enum MassUnit implements Unit {
     MILLIGRAMS(MassUnitScale.MILLIGRAM_TO_KILOGRAM_SCALE),
     GRAMS(MassUnitScale.GRAM_TO_KILOGRAM_SCALE),
     KILOGRAMS(1),
@@ -17,11 +18,8 @@ public enum MassUnit {
         this.toKilogramsScale = toKilogramsScale;
     }
 
-    public double toUnit(MassUnit unit, double val) {
-        return val * conversionValue(unit);
-    }
-
-    private double conversionValue(MassUnit unit) {
-        return toKilogramsScale/unit.toKilogramsScale;
+    @Override
+    public double toBaseUnitScale() {
+        return toKilogramsScale;
     }
 }

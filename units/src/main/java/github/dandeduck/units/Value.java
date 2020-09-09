@@ -1,4 +1,4 @@
-package github.dandeduck.units.generic;
+package github.dandeduck.units;
 
 import com.flash3388.flashlib.util.CompareResult;
 import com.jmath.ExtendedMath;

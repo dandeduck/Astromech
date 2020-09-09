@@ -1,7 +1,7 @@
 package github.dandeduck.units.distance;
 
 import github.dandeduck.units.NotMatchingUnitsException;
-import github.dandeduck.units.generic.Value;
+import github.dandeduck.units.Value;
 import github.dandeduck.units.morion.Velocity;
 import github.dandeduck.units.time.Time;
 

@@ -1,4 +1,4 @@
-package github.dandeduck.units.generic;
+package github.dandeduck.units;
 
 public class GenericUnitScale {
     public static final int HECTO_SCALE = 100;
