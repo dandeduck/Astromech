@@ -21,8 +21,8 @@ subprojects {
 
     dependencies {
         testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
-        compile "com.flash3388.flashlib:flashlib:2.1.0"
-        compile "com.flash3388.util:jmath:1.0"
+        implementation "com.flash3388.flashlib:flashlib:2.1.0"
+        implementation "com.flash3388.util:jmath:1.0"
     }
 
     test {

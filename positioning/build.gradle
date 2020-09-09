@@ -1,3 +1,3 @@
 dependencies {
-    implementation project(':github.dandeduck.units')
+    implementation project(':units')
 }
