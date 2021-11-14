@@ -1,7 +1,7 @@
 package github.dandeduck.units.complex;
 
-import github.dandeduck.units.morion.Acceleration;
-import github.dandeduck.units.morion.Jerk;
+import github.dandeduck.units.values.Acceleration;
+import github.dandeduck.units.values.Jerk;
 
 public class FrcParameters {
     public static final Acceleration DEFAULT_ACCELERATION_METERS_PER_SECOND_SQUARED = Acceleration.metersPerSecondSquared(2);

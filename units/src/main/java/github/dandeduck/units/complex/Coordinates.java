@@ -1,6 +1,6 @@
 package github.dandeduck.units.complex;
 
-import github.dandeduck.units.distance.Distance;
+import github.dandeduck.units.values.Distance;
 
 public class Coordinates {
     private final Distance x;

@@ -1,8 +1,8 @@
 package github.dandeduck.units.complex;
 
-import github.dandeduck.units.angle.Angle;
-import github.dandeduck.units.distance.Distance;
-import github.dandeduck.units.time.Time;
+import github.dandeduck.units.values.Angle;
+import github.dandeduck.units.values.Distance;
+import github.dandeduck.units.values.Time;
 
 public class Position {
     private final Time timestamp;

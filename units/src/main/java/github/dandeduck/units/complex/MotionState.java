@@ -1,8 +1,8 @@
 package github.dandeduck.units.complex;
 
-import github.dandeduck.units.morion.Acceleration;
-import github.dandeduck.units.morion.Jerk;
-import github.dandeduck.units.morion.Velocity;
+import github.dandeduck.units.values.Acceleration;
+import github.dandeduck.units.values.Jerk;
+import github.dandeduck.units.values.Velocity;
 
 import java.util.Objects;
 
